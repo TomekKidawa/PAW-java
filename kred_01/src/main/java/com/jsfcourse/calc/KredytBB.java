@@ -18,8 +18,8 @@ public class KredytBB {
 
 	@Inject
 	FacesContext ctx;
-	
-	
+
+
 
 	public String getKwota() {
 		return kwota;
