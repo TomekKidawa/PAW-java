@@ -71,7 +71,7 @@ public class KredytBB {
 		}
 	}
 
-	// Go to "showresult" if ok
+	// Go to "showresult" if ok ok ok ok ok ok 
 	public String calc() {
 		if (doTheMath()) {
 			return "showresult";
