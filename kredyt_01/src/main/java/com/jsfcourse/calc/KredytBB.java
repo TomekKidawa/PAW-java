@@ -53,7 +53,7 @@ public class KredytBB {
 	public void setResult(Double result) {
 		this.result = result;
 	}
-
+// aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 	public boolean doTheMath() {
 		try {
 			double kwota = Double.parseDouble(this.kwota);
