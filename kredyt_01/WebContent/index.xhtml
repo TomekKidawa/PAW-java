@@ -11,23 +11,32 @@
 </h:head>
 <h:body>
 
-	<p:panel header="Kalkulator Kredytow" style="margin:1em auto" toggleable="true" closable="true" toggleSpeed="500"
+	<p:panel header="Kalkulator Kredytowy" style="margin:1em auto" toggleable="true" closable="true" toggleSpeed="500"
                 closeSpeed="500">
 	
 		<h:form id="bla">
 			<h:panelGrid id="grid" columns="3" cellpadding="5">
 		  		<p:outputLabel for="kwota" value="Kwota:"/>
-		  		<p:inputText id="kwota" value="#{kredytBB.kwota}" required="true" requiredMessage="brak kwoty" />
+		  		<p:inputText id="kwota" value="#{kredytBB.kwota}" required="true" requiredMessage="brak kwoty" converterMessage="Kwota musi być liczba całkowita"
+		  		validatorMessage="kwota musi być większa niż 2500">
+		  			<f:validateLongRange minimum="2500"/>
+		  		</p:inputText>
 		  	    <p:message for="kwota"/>
 		  		
 			
 		  		<p:outputLabel for="lata" value="Lata:"/>
-		  		<p:inputText id="lata" value="#{kredytBB.lata}" required="true" requiredMessage="brak lat"/>
+		  		<p:inputText id="lata" value="#{kredytBB.lata}" required="true" requiredMessage="brak lat" converterMessage="Lata muszą być liczba całkowitą"
+		  		validatorMessage="lata musza być z przedziału od 1 do 50">
+		  			<f:validateLongRange minimum="1" maximum="50"/>
+		  		</p:inputText>
 		  		<p:message for="lata"/>
 		  		
 		  		
 		  		<p:outputLabel for="opr" value="Opr:"/>
-		  		<p:inputText id="opr" value="#{kredytBB.opr}" required="true" requiredMessage="brak oprocentowania" />
+		  		<p:inputText id="opr" value="#{kredytBB.opr}" required="true" requiredMessage="brak oprocentowania" converterMessage="Oprocentowanie musi być liczba" 
+		  		validatorMessage="oprocentowanie musi być w przedziale od 1% do 25%">
+		  			<f:validateDoubleRange minimum="1" maximum="25"/>
+		  		</p:inputText>
 		  		<p:message for="opr"/>
 		  		
 				<p:commandButton value="Dodaj" action="#{kredytBB.calc()}" update="@form"/>			

@@ -11,9 +11,9 @@ import javax.faces.context.FacesContext;
 @RequestScoped
 //@SessionScoped
 public class KredytBB {
-	private String kwota;
-	private String lata;
-	private String opr;
+	private long kwota = 0;
+	private int lata = 0;
+	private double opr = 0;
 	private Double result;
 
 	@Inject
@@ -21,27 +21,27 @@ public class KredytBB {
 
 
 
-	public String getKwota() {
+	public long getKwota() {
 		return kwota;
 	}
 
-	public void setKwota(String kwota) {
+	public void setKwota(long kwota) {
 		this.kwota = kwota;
 	}
 
-	public String getLata() {
+	public int getLata() {
 		return lata;
 	}
 
-	public void setLata(String lata) {
+	public void setLata(int lata) {
 		this.lata = lata;
 	}
 
-	public String getOpr() {
+	public double getOpr() {
 		return opr;
 	}
 
-	public void setOpr(String opr) {
+	public void setOpr(double opr) {
 		this.opr = opr;
 	}
 
@@ -56,9 +56,9 @@ public class KredytBB {
 // aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 	public boolean doTheMath() {
 		try {
-			double kwota = Double.parseDouble(this.kwota);
-			double lata = Double.parseDouble(this.lata);
-			double opr = Double.parseDouble(this.opr);
+//			double kwota = Double.parseDouble(this.kwota);
+//			double lata = Double.parseDouble(this.lata);
+//			double opr = Double.parseDouble(this.opr);
 
 			result = (kwota* (opr * 0.01)+ (kwota/(lata*12)));
 
