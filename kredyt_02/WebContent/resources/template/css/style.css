@@ -1,0 +1,47 @@
+body{
+	font-family: 'Century Gothic',helvetica,verdana,arial;
+	background: url("../img/w1.png.jsf?ln=template") no-repeat center center fixed;
+	background-size: cover;
+	margin:0;
+}
+
+.bottom-space{
+	margin-bottom: 1em;
+}
+
+.top-space{
+	margin-top: 1em;
+}
+
+#page_wrapper{
+	margin: 1em;
+	min-width: 700px;
+}
+
+.footer-div{
+	display:flex;
+	justify-content: space-between;
+	margin:auto;
+	width:70%;
+}
+
+
+.row{
+	display:flex;
+	justify-content: space-between;
+	width: 70%;
+	margin:auto;
+}
+
+.tile{
+	border-radius:3px;
+	border: 1px solid black;
+	padding: 10px;
+	
+}
+
+.tile:hover{
+	background-color:#d1d1d1;
+	transition:1s ease-out;
+	color:white;
+}
